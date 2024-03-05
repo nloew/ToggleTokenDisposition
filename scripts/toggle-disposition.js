@@ -21,29 +21,29 @@ class ToggleDisposition {
 		eventTarget.closest('.toggle-disposition').children('i').removeClass().addClass('fas').addClass(this.getIconForDisposition(disposition));
 		event.stopPropagation();
 	}
-
+	
 	static getIconForDisposition(disposition) {
 		switch(disposition) {
-			case 2:
+			case CONST.TOKEN_DISPOSITIONS.SECRET:
 				return 'fa-face-dotted';
-			case 1:
+			case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
 				return 'fa-face-smile';
-			case 0:
+			case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
 				return 'fa-face-meh';
-			default:
+			case CONST.TOKEN_DISPOSITIONS.HOSTILE:
 				return 'fa-face-angry';
 		}
 	}
-
+	
 	static getTooltipForDisposition(disposition) {
 		switch(disposition) {
-			case 2:
+			case CONST.TOKEN_DISPOSITIONS.SECRET:
 				return 'toggle-token-disposition.disposition.secret';
-			case 1:
+			case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
 				return 'toggle-token-disposition.disposition.friendly';
-			case 0:
+			case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
 				return 'toggle-token-disposition.disposition.neutral';
-			default:
+			case CONST.TOKEN_DISPOSITIONS.HOSTILE:
 				return 'toggle-token-disposition.disposition.hostile';
 		}
 	}
