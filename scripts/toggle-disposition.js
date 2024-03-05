@@ -21,32 +21,32 @@ class ToggleDisposition {
 		eventTarget.closest('.toggle-disposition').children('i').removeClass().addClass('fas').addClass(this.getIconForDisposition(disposition));
 		event.stopPropagation();
 	}
-	
+
 	static getIconForDisposition(disposition) {
 		switch(disposition) {
-			case CONST.TOKEN_DISPOSITIONS.SECRET:
-				return 'fa-face-dotted';
-			case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
-				return 'fa-face-smile';
-			case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
-				return 'fa-face-meh';
-			case CONST.TOKEN_DISPOSITIONS.HOSTILE:
-				return 'fa-face-angry';
+          	  case CONST.TOKEN_DISPOSITIONS.SECRET:
+		  	return 'fa-face-dotted';
+		  case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
+			return 'fa-face-smile';
+		  case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
+		  	return 'fa-face-meh';
+		case CONST.TOKEN_DISPOSITIONS.HOSTILE:
+			return 'fa-face-angry';
 		}
 	}
-	
-	static getTooltipForDisposition(disposition) {
-		switch(disposition) {
-			case CONST.TOKEN_DISPOSITIONS.SECRET:
-				return 'toggle-token-disposition.disposition.secret';
-			case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
-				return 'toggle-token-disposition.disposition.friendly';
-			case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
-				return 'toggle-token-disposition.disposition.neutral';
-			case CONST.TOKEN_DISPOSITIONS.HOSTILE:
-				return 'toggle-token-disposition.disposition.hostile';
-		}
-	}
+
+    static getTooltipForDisposition(disposition) {
+        switch(disposition) {
+            case CONST.TOKEN_DISPOSITIONS.SECRET:
+                return 'toggle-token-disposition.disposition.secret';
+            case CONST.TOKEN_DISPOSITIONS.FRIENDLY:
+                return 'toggle-token-disposition.disposition.friendly';
+            case CONST.TOKEN_DISPOSITIONS.NEUTRAL:
+                return 'toggle-token-disposition.disposition.neutral';
+            case CONST.TOKEN_DISPOSITIONS.HOSTILE:
+                return 'toggle-token-disposition.disposition.hostile';
+        }
+    }
 
 	static getTokenActor(token) {
 		return game.actors.get(token.actorId); 
