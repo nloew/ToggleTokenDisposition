@@ -24,6 +24,8 @@ class ToggleDisposition {
 
 	static getIconForDisposition(disposition) {
 		switch(disposition) {
+			case 2:
+				return 'fa-face-dotted';
 			case 1:
 				return 'fa-face-smile';
 			case 0:
@@ -35,6 +37,8 @@ class ToggleDisposition {
 
 	static getTooltipForDisposition(disposition) {
 		switch(disposition) {
+			case 2:
+				return 'toggle-token-disposition.disposition.secret';
 			case 1:
 				return 'toggle-token-disposition.disposition.friendly';
 			case 0:
@@ -55,6 +59,7 @@ class ToggleDisposition {
 		buttons.append(this.createDispositionChangeButton(CONST.TOKEN_DISPOSITIONS.FRIENDLY, token));
 		buttons.append(this.createDispositionChangeButton(CONST.TOKEN_DISPOSITIONS.NEUTRAL, token));
 		buttons.append(this.createDispositionChangeButton(CONST.TOKEN_DISPOSITIONS.HOSTILE, token));
+		buttons.append(this.createDispositionChangeButton(CONST.TOKEN_DISPOSITIONS.SECRET, token));
 
 		return buttons;
 	}
